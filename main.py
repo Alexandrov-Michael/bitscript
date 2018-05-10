@@ -4,7 +4,7 @@ from binance.client import Client
 
 # import threading
 
-from binance.websockets import BinanceSocketManager
+# from binance.websockets import BinanceSocketManager
 
 pair = "ZILBTC"
 
