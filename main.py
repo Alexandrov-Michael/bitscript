@@ -23,9 +23,11 @@ for i in range(100):
 	for x in trades:
 		if x["isBuyerMaker"]:
 			sellTrade = sellTrade + float(x["qty"])
+			print "sell -- %s" % (float(x["qty"]))
 		else:
 			buyTrade = buyTrade + float(x["qty"])
-		print float(x["qty"])
+			print "buy -- %s" % (float(x["qty"]))
+
 
 	# print "buyTrade summ: %s" % (buyTrade) 
 	# print "sellTrade summ: %s" % (sellTrade) 
