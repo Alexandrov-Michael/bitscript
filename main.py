@@ -20,8 +20,9 @@ for i in range(1000):
 	buyTrade = 0
 	sellTrade = 0
 	trades = client.get_recent_trades(symbol=pair, limit=30)
-	lastPrice = str(trades[0]["price"])
-	lastQ = str(trades[0]["qty"])
+	lastTrade = trades[-1]
+	lastPrice = str(lastTrade["price"])
+	lastQ = str(lastTrade["qty"])
 	for x in trades:
 		if x["isBuyerMaker"]:
 			sellTrade = sellTrade + float(x["qty"])
