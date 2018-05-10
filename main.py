@@ -9,12 +9,20 @@ from binance.client import Client
 pair = "ZILBTC"
 
 client = Client(api_key, api_secret)
+bidLast = 0
+askLast = 0
 
 for i in range(1000):
 	depth = client.get_order_book(symbol=pair)
-	print depth["bids"][0]
-	print depth["asks"][0]
-	print " "
+	bidNow = depth["bids"][0][0]
+	askNow = depth["asks"][0][0]
+	if bidLast < bidNow and askLast < askNow:
+		print "1"
+		print "BL: %s  BN: %s   AL: %s  AN: %s" % (bidLast, bidNow, askLast, askNow)
+	else:
+		print 0
+
+	
 
 
 
