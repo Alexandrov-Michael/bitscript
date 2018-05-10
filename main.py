@@ -12,25 +12,26 @@ client = Client(api_key, api_secret)
 bidLast = 0
 askLast = 0
 
-for i in range(1000):
-	depth = client.get_order_book(symbol=pair)
-	bidNow = depth["bids"][0][0]
-	askNow = depth["asks"][0][0]
-	if bidLast < bidNow and askLast < askNow:
-		print "1"
-		print "BL: %s  BN: %s   AL: %s  AN: %s" % (bidLast, bidNow, askLast, askNow)
-	else:
-		print 0
-	bidLast = bidNow
-	askLast = askNow
+# for i in range(1000):
+# 	depth = client.get_order_book(symbol=pair)
+# 	bidNow = depth["bids"][0][0]
+# 	askNow = depth["asks"][0][0]
+# 	if bidLast < bidNow and askLast < askNow:
+# 		print "1"
+# 		print "BL: %s  BN: %s   AL: %s  AN: %s" % (bidLast, bidNow, askLast, askNow)
+# 	else:
+# 		print 0
+# 	bidLast = bidNow
+# 	askLast = askNow
 
 	
 
 
 
 
-# candles = client.get_klines(symbol=pair, interval=Client.KLINE_INTERVAL_5MINUTE)
-# print candles
+candles = client.get_klines(symbol=pair, interval=Client.KLINE_INTERVAL_1MINUTE)
+
+print candles
 
 
 # def listsum(numList):
