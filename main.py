@@ -26,8 +26,11 @@ for i in range(10):
 		else:
 			sellTrade = sellTrade + float(x["qty"])
 
-	print "buyTrade summ: %s" % (buyTrade) 
-	print "sellTrade summ: %s" % (sellTrade) 
+	# print "buyTrade summ: %s" % (buyTrade) 
+	# print "sellTrade summ: %s" % (sellTrade) 
+	# print " "
+	msg = buyTrade - sellTrade
+	print msg
 	print " "
 
 
