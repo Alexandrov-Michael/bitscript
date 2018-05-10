@@ -1,5 +1,5 @@
 # coding=utf-8
-import * from keys
+from keys import *
 from binance.client import Client
 
 pair = "BNBBTC"
