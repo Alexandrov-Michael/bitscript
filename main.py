@@ -57,11 +57,14 @@ for i in range(1000):
 		else:
 			dvigenie = "-"
 		changeLine = []
-		print "Разница: %s    Изм: %s%s    Движение: %s    Цена: %s    Кол-во: %s" %(msg, dvig, str(abs(changeModul)), dvigenie, lastPrice, lastQ)
-	else:
-		print "Разница: %s    Изм: %s%s    Цена: %s    Кол-во: %s" %(msg, dvig, str(abs(changeModul)), lastPrice, lastQ)
+		print "Движение: %s" %(dvigenie)
+		print " "
+	
+		
 	
 	changeLine.append(changeModul)
+
+	print "Разница: %s    Изм: %s%s    Цена: %s    Кол-во: %s" %(msg, dvig, str(abs(changeModul)), lastPrice, lastQ)
 	print " "
 
 
