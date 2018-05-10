@@ -48,7 +48,7 @@ def bollinger_strat(df, window, no_of_std):
     df['Bollinger High'] = rolling_mean + (rolling_std * no_of_std)
     df['Bollinger Low'] = rolling_mean - (rolling_std * no_of_std)     
 
-bollinger_strat(df,5,2)
+print bollinger_strat(df,5,2)
 
 
 
