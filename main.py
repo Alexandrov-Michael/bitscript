@@ -29,9 +29,9 @@ askLast = 0
 
 
 
-candles = client.get_klines(symbol=pair, interval=Client.KLINE_INTERVAL_1MINUTE)
+candles = client.get_klines(symbol=pair, interval=Client.KLINE_INTERVAL_1MINUTE, limit=10)
 
-print candles
+print candles[0]
 
 
 # def listsum(numList):
