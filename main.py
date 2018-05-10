@@ -20,9 +20,17 @@ def listsum(numList):
         theSum = theSum + i
     return theSum
 
-changeConst = 0
+# def CheckSumList(value, listCheck, listItems):
+# 	if len(listCheck) == listItems:
+# 		summListCheck = listsum(listCheck)
+# 		listCheck = []
+# 		print "Движение: %s" % (summListCheck)
+# 	listCheck.append(value)
+# 	return listCheck
+
+
 changeLine = []
-dvigenie = ""
+changeLine2 = []
 
 
 for i in range(1000):
@@ -41,11 +49,18 @@ for i in range(1000):
 
 	
 	stakan = buyTrade - sellTrade
-	if len(changeLine) == 10:
+	if len(changeLine) == 5:
 		summlist = listsum(changeLine)
+		if len(changeLine2) ==3:
+			summlist2 = listsum(changeLine2)
+			changeLine2 = []
+			print "Движение: %s" %(summlist2)
+		changeLine2.append(summlist)
 		changeLine = []
-		print "Движение: %s" %(summlist)
 	changeLine.append(stakan)
+
+
+
 	# print stakan
 	
 
