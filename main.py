@@ -50,15 +50,15 @@ for i in range(1000):
 	if len(changeLine) == 10:
 		summlist = listsum(changeLine)
 		changeLine = []
-		print " "
+		# print " "
 		print "Движение: %s" %(summlist)
-		print " "
+		# print " "
 	
 		
 	
 	changeLine.append(changeModul)
 
-	print "%s %s" % (msg, str(changeModul))
+	# print "%s %s" % (msg, str(changeModul))
 	# print "Разница: %s    Изм: %s    Цена: %s    Кол-во: %s" %(msg, str(changeModul), lastPrice, lastQ)
 	# print " "
 
