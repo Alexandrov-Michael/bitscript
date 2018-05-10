@@ -44,11 +44,5 @@ bm = BinanceSocketManager(client)
 conn_key = bm.start_trade_socket(pair, process_message)
 # then start the socket manager
 bm.start()
-
-
-def printit():
-  threading.Timer(5.0, printit).start()
-  bm.close()
-printit()
 		
 
