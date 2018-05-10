@@ -9,8 +9,8 @@ from binance.client import Client
 pair = "ZILBTC"
 
 client = Client(api_key, api_secret)
-bidLast = 0
-askLast = 0
+# bidLast = 0
+# askLast = 0
 
 # for i in range(1000):
 # 	depth = client.get_order_book(symbol=pair)
@@ -32,6 +32,24 @@ askLast = 0
 candles = client.get_klines(symbol=pair, interval=Client.KLINE_INTERVAL_1MINUTE, limit=10)
 
 print candles[0]
+
+import numpy as np
+import pandas as pd
+
+nda1 = np.array(candles)
+
+df = pd.DataFrame(nda1)
+
+
+def bollinger_strat(df, window, no_of_std):
+    rolling_mean = df[4].rolling(window).mean()
+    rolling_std = df[4].rolling(window).std()
+
+    df['Bollinger High'] = rolling_mean + (rolling_std * no_of_std)
+    df['Bollinger Low'] = rolling_mean - (rolling_std * no_of_std)     
+
+bollinger_strat(df,5,2)
+
 
 
 # def listsum(numList):
