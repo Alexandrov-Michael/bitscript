@@ -16,7 +16,7 @@ client = Client(api_key, api_secret)
 
 
 
-for i in range(10):
+for i in range(100):
 	buyTrade = 0
 	sellTrade = 0
 	trades = client.get_recent_trades(symbol=pair, limit=30)
