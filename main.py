@@ -35,10 +35,14 @@ for i in range(1000):
 	# print " "
 	msg = buyTrade - sellTrade
 	changeModul = changeConst - msg
+	if changeModul > 0:
+		dvig = "+"
+	else
+		dvig = "-"
 	changeConst = msg
 
 	# print "Разница: %s      buy: %s      sell: %s" % (msg, buyTrade, sellTrade)
-	print "Разница: %s    Изм: %s    Цена: %s    Кол-во: %s" %(msg, str(changeModul), lastPrice, lastQ)
+	print "Разница: %s    Изм: %s%s    Цена: %s    Кол-во: %s" %(msg, dvig, str(abs(changeModul)), lastPrice, lastQ)
 	# print lastPrice["price"]
 	print " "
 
