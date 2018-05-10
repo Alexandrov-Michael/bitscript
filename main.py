@@ -31,7 +31,8 @@ for i in range(1000):
 	# print "sellTrade summ: %s" % (sellTrade) 
 	# print " "
 	msg = buyTrade - sellTrade
-	print "Разница: %s      buy: %s      sell: %s" % (msg, buyTrade, sellTrade)
+	# print "Разница: %s      buy: %s      sell: %s" % (msg, buyTrade, sellTrade)
+	print msg
 	print " "
 
 
