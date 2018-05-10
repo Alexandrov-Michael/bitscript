@@ -22,9 +22,9 @@ for i in range(100):
 	trades = client.get_recent_trades(symbol=pair, limit=30)
 	for x in trades:
 		if x["isBuyerMaker"]:
-			buyTrade = buyTrade + float(x["qty"])
-		else:
 			sellTrade = sellTrade + float(x["qty"])
+		else:
+			buyTrade = buyTrade + float(x["qty"])
 
 	# print "buyTrade summ: %s" % (buyTrade) 
 	# print "sellTrade summ: %s" % (sellTrade) 
