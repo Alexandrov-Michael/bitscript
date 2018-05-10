@@ -2,7 +2,7 @@
 from keys import *
 from binance.client import Client
 
-import threading
+# import threading
 
 from binance.websockets import BinanceSocketManager
 
