@@ -57,7 +57,7 @@ for i in range(1000):
 		else:
 			dvigenie = "-"
 		changeLine = []
-		print "Движение: %s" %(dvigenie)
+		print "Движение: %s%s" %(dvigenie, summlist)
 		print " "
 	
 		
