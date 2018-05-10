@@ -49,7 +49,6 @@ for i in range(1000):
 
 	if len(changeLine) == 10:
 		summlist = listsum(changeLine)
-		summlist *= -1
 		changeLine = []
 		print "Движение: %s" %(summlist)
 		print " "
