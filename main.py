@@ -13,7 +13,16 @@ client = Client(api_key, api_secret)
 # candles = client.get_klines(symbol=pair, interval=Client.KLINE_INTERVAL_5MINUTE)
 # print candles
 
+
+def listsum(numList):
+    theSum = 0
+    for i in numList:
+        theSum = theSum + i
+    return theSum
+
 changeConst = 0
+changeLine = []
+dvigenie = ""
 
 
 for i in range(1000):
@@ -41,9 +50,18 @@ for i in range(1000):
 		dvig = "+"
 	changeConst = msg
 
-	# print "Разница: %s      buy: %s      sell: %s" % (msg, buyTrade, sellTrade)
-	print "Разница: %s    Изм: %s%s    Цена: %s    Кол-во: %s" %(msg, dvig, str(abs(changeModul)), lastPrice, lastQ)
-	# print lastPrice["price"]
+	if len(changeLine) == 10:
+		summlist = listsum(changeLine)
+		if summlist < 0:
+			dvigenie = "+"
+		else
+			dvigenie = "-"
+		changeLine = []
+		print "Разница: %s    Изм: %s%s    Движение: %s    Цена: %s    Кол-во: %s" %(msg, dvig, str(abs(changeModul)), dvigenie, lastPrice, lastQ)
+	else:
+		print "Разница: %s    Изм: %s%s    Цена: %s    Кол-во: %s" %(msg, dvig, str(abs(changeModul)), lastPrice, lastQ)
+	
+	changeLine.append(changeModul)
 	print " "
 
 
