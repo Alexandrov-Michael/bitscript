@@ -37,7 +37,7 @@ for i in range(1000):
 	changeModul = changeConst - msg
 	if changeModul > 0:
 		dvig = "+"
-	else
+	else:
 		dvig = "-"
 	changeConst = msg
 
