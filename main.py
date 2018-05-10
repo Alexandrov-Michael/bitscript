@@ -44,19 +44,12 @@ for i in range(1000):
 	# print " "
 	msg = buyTrade - sellTrade
 	changeModul = changeConst - msg
-	if changeModul > 0:
-		dvig = "-"
-	else:
-		dvig = "+"
+	changeModul *= -1
 	changeConst = msg
 
 	if len(changeLine) == 10:
 		summlist = listsum(changeLine)
 		summlist *= -1
-		if summlist < 0:
-			dvigenie = "+"
-		else:
-			dvigenie = "-"
 		changeLine = []
 		print "Движение: %s" %(summlist)
 		print " "
@@ -65,8 +58,8 @@ for i in range(1000):
 	
 	changeLine.append(changeModul)
 
-	print "Разница: %s    Изм: %s%s    Цена: %s    Кол-во: %s" %(msg, dvig, str(abs(changeModul)), lastPrice, lastQ)
-	print " "
+	# print "Разница: %s    Изм: %s    Цена: %s    Кол-во: %s" %(msg, str(changeModul), lastPrice, lastQ)
+	# print " "
 
 
 
