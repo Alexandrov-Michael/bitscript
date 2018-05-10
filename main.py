@@ -58,6 +58,7 @@ for i in range(1000):
 	
 	changeLine.append(changeModul)
 
+	print "%s %s" % (msg, str(changeModul))
 	# print "Разница: %s    Изм: %s    Цена: %s    Кол-во: %s" %(msg, str(changeModul), lastPrice, lastQ)
 	# print " "
 
