@@ -13,7 +13,7 @@ client = Client(api_key, api_secret)
 # candles = client.get_klines(symbol=pair, interval=Client.KLINE_INTERVAL_5MINUTE)
 # print candles
 
-
+changeModul = 0
 
 
 for i in range(1000):
@@ -34,8 +34,9 @@ for i in range(1000):
 	# print "sellTrade summ: %s" % (sellTrade) 
 	# print " "
 	msg = buyTrade - sellTrade
+	changeModul = abs(changeModul - msg)
 	# print "Разница: %s      buy: %s      sell: %s" % (msg, buyTrade, sellTrade)
-	print "Разница: %s    Цена последняя: %s    Кол-во последнее: %s" %(msg, lastPrice, lastQ)
+	print "Разница: %s    Изм: %s    Цена: %s    Кол-во: %s" %(msg, str(changeModul), lastPrice, lastQ)
 	# print lastPrice["price"]
 	print " "
 
