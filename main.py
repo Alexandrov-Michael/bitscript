@@ -11,4 +11,4 @@ pair = "BNBBTC"
 client = Client(api_key, api_secret)
 
 candles = client.get_klines(symbol=pair, interval=Client.KLINE_INTERVAL_5MINUTE)
-candles
+print candles
