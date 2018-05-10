@@ -45,6 +45,6 @@ bm.start()
 
 
 for i in range(10):
-	if i = 10:
+	if i == 10:
 		bm.close()
 
