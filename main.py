@@ -36,9 +36,9 @@ for i in range(1000):
 	msg = buyTrade - sellTrade
 	changeModul = changeConst - msg
 	if changeModul > 0:
-		dvig = "+"
-	else:
 		dvig = "-"
+	else:
+		dvig = "+"
 	changeConst = msg
 
 	# print "Разница: %s      buy: %s      sell: %s" % (msg, buyTrade, sellTrade)
