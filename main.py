@@ -2,6 +2,8 @@
 from keys import *
 from binance.client import Client
 
+import threading
+
 from binance.websockets import BinanceSocketManager
 
 pair = "ZILBTC"
@@ -44,7 +46,9 @@ conn_key = bm.start_trade_socket(pair, process_message)
 bm.start()
 
 
-for i in range(10):
-	if i == 10:
-		bm.close()
+def printit():
+  threading.Timer(5.0, printit).start()
+  bm.close()
+printit()
+		
 
