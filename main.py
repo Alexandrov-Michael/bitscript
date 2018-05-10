@@ -2,7 +2,7 @@
 import * from keys
 
 pair = "BNBBTC"
-
+print api_key 
 
 
 
