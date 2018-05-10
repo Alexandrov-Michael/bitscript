@@ -41,39 +41,12 @@ for i in range(1000):
 
 	
 	stakan = buyTrade - sellTrade
-	print stakan
-	# changeModul = changeConst - msg
-	# changeModul *= -1
-	# changeConst = msg
-
-	# if len(changeLine) == 10:
-	# 	summlist = listsum(changeLine)
-	# 	changeLine = []
-	# 	# print " "
-	# 	print "Движение: %s" %(summlist)
-	# 	# print " "
+	if len(changeLine) == 10:
+		summlist = listsum(changeLine)
+		changeLine = []
+		print "Движение: %s" %(summlist)
+	changeLine.append(stakan)
+	# print stakan
 	
-		
-	
-	# changeLine.append(changeModul)
 
-	# print "%s %s" % (msg, str(changeModul))
-	# print "Разница: %s    Изм: %s    Цена: %s    Кол-во: %s" %(msg, str(changeModul), lastPrice, lastQ)
-	# print " "
-
-
-
-# def process_message(msg):
-#     # print("message type: {}".format(msg['e']))
-#     print(msg)
-#     # do something
-
-
-
-# bm = BinanceSocketManager(client)
-# # start any sockets here, i.e a trade socket
-# conn_key = bm.start_trade_socket(pair, process_message)
-# # then start the socket manager
-# bm.start()
-		
 
