@@ -34,7 +34,7 @@ for i in range(1000):
 	# print "sellTrade summ: %s" % (sellTrade) 
 	# print " "
 	msg = buyTrade - sellTrade
-	changeModul = abs(changeConst - msg)
+	changeModul = changeConst - msg
 	changeConst = msg
 
 	# print "Разница: %s      buy: %s      sell: %s" % (msg, buyTrade, sellTrade)
