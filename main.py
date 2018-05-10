@@ -39,24 +39,23 @@ for i in range(1000):
 			buyTrade = buyTrade + float(x["qty"])
 
 
-	# print "buyTrade summ: %s" % (buyTrade) 
-	# print "sellTrade summ: %s" % (sellTrade) 
-	# print " "
-	msg = buyTrade - sellTrade
-	changeModul = changeConst - msg
-	changeModul *= -1
-	changeConst = msg
+	
+	stakan = buyTrade - sellTrade
+	print stakan
+	# changeModul = changeConst - msg
+	# changeModul *= -1
+	# changeConst = msg
 
-	if len(changeLine) == 10:
-		summlist = listsum(changeLine)
-		changeLine = []
-		# print " "
-		print "Движение: %s" %(summlist)
-		# print " "
+	# if len(changeLine) == 10:
+	# 	summlist = listsum(changeLine)
+	# 	changeLine = []
+	# 	# print " "
+	# 	print "Движение: %s" %(summlist)
+	# 	# print " "
 	
 		
 	
-	changeLine.append(changeModul)
+	# changeLine.append(changeModul)
 
 	# print "%s %s" % (msg, str(changeModul))
 	# print "Разница: %s    Изм: %s    Цена: %s    Кол-во: %s" %(msg, str(changeModul), lastPrice, lastQ)
