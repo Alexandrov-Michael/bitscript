@@ -18,7 +18,6 @@ sellTrade = 0
 
 trades = client.get_recent_trades(symbol=pair, limit=30)
 for x in trades:
-	print x
 	if x["isBuyerMaker"]:
 		buyTrade = buyTrade + float(x["qty"])
 	else:
