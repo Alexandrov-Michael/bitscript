@@ -2,11 +2,9 @@
 from keys import *
 from binance.client import Client
 
+from binance.websockets import BinanceSocketManager
+
 pair = "ZILBTC"
-
-
-
-
 
 client = Client(api_key, api_secret)
 
@@ -16,16 +14,37 @@ client = Client(api_key, api_secret)
 
 
 
-for i in range(10):
-	buyTrade = 0
-	sellTrade = 0
-	trades = client.get_recent_trades(symbol=pair, limit=30)
-	for x in trades:
-		if x["isBuyerMaker"]:
-			buyTrade = buyTrade + float(x["qty"])
-		else:
-			sellTrade = sellTrade + float(x["qty"])
+# for i in range(10):
+# 	buyTrade = 0
+# 	sellTrade = 0
+# 	trades = client.get_recent_trades(symbol=pair, limit=30)
+# 	for x in trades:
+# 		if x["isBuyerMaker"]:
+# 			buyTrade = buyTrade + float(x["qty"])
+# 		else:
+# 			sellTrade = sellTrade + float(x["qty"])
 
-	print "buyTrade summ: %s" % (buyTrade) 
-	print "sellTrade summ: %s" % (sellTrade) 
-	print " "
+# 	print "buyTrade summ: %s" % (buyTrade) 
+# 	print "sellTrade summ: %s" % (sellTrade) 
+# 	print " "
+
+
+
+def process_message(msg):
+    # print("message type: {}".format(msg['e']))
+    print(msg)
+    # do something
+
+
+
+bm = BinanceSocketManager(client)
+# start any sockets here, i.e a trade socket
+conn_key = bm.start_trade_socket(pair, process_message)
+# then start the socket manager
+bm.start()
+
+
+for i in range(10):
+	if i = 10:
+		bm.close()
+
