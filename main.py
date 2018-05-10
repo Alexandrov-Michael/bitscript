@@ -18,10 +18,10 @@ sellTrade = 0
 
 trades = client.get_recent_trades(symbol=pair, limit=30)
 for x in trades:
-	if x.["isBuyerMaker"]:
-		buyTrade = buyTrade + x.["isBuyerMaker"]
+	if x["isBuyerMaker"]:
+		buyTrade = buyTrade + x["isBuyerMaker"]
 	else
-		sellTrade = sellTrade + x.["isBuyerMaker"]
+		sellTrade = sellTrade + x["isBuyerMaker"]
 
 print "buyTrade summ: %s" % (buyTrade) 
 print " "
