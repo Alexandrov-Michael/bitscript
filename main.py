@@ -52,12 +52,13 @@ for i in range(1000):
 
 	if len(changeLine) == 10:
 		summlist = listsum(changeLine)
+		summlist *= -1
 		if summlist < 0:
 			dvigenie = "+"
 		else:
 			dvigenie = "-"
 		changeLine = []
-		print "Движение: %s%s" %(dvigenie, summlist)
+		print "Движение: %s" %(summlist)
 		print " "
 	
 		
