@@ -20,7 +20,7 @@ for i in range(1000):
 	buyTrade = 0
 	sellTrade = 0
 	trades = client.get_recent_trades(symbol=pair, limit=30)
-	lastPrice = trades[0]
+	lastPrice = str(trades[0]["price"])
 	for x in trades:
 		if x["isBuyerMaker"]:
 			sellTrade = sellTrade + float(x["qty"])
@@ -33,7 +33,7 @@ for i in range(1000):
 	# print " "
 	msg = buyTrade - sellTrade
 	# print "Разница: %s      buy: %s      sell: %s" % (msg, buyTrade, sellTrade)
-	print "Разница: %s    Цена: %s" %(msg, lastPrice["price"])
+	print "Разница: %s    Цена: %s" %(msg, lastPrice)
 	# print lastPrice["price"]
 	print " "
 
