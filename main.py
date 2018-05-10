@@ -54,7 +54,7 @@ for i in range(1000):
 		summlist = listsum(changeLine)
 		if summlist < 0:
 			dvigenie = "+"
-		else
+		else:
 			dvigenie = "-"
 		changeLine = []
 		print "Разница: %s    Изм: %s%s    Движение: %s    Цена: %s    Кол-во: %s" %(msg, dvig, str(abs(changeModul)), dvigenie, lastPrice, lastQ)
