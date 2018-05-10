@@ -21,6 +21,8 @@ for i in range(1000):
 		print "BL: %s  BN: %s   AL: %s  AN: %s" % (bidLast, bidNow, askLast, askNow)
 	else:
 		print 0
+	bidLast = bidNow
+	askLast = askNow
 
 	
 
