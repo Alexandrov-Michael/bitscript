@@ -50,6 +50,7 @@ for i in range(1000):
 	if len(changeLine) == 10:
 		summlist = listsum(changeLine)
 		changeLine = []
+		print " "
 		print "Движение: %s" %(summlist)
 		print " "
 	
