@@ -59,7 +59,7 @@ stakanLast = 0
 bidLast = 0
 askLast = 0
 
-for i in range(30):
+for i in range(50):
 	buyTrade = 0
 	sellTrade = 0
 	trades = client.get_recent_trades(symbol=pair, limit=30)
