@@ -57,7 +57,7 @@ candles = client.get_klines(symbol=pair, interval=Client.KLINE_INTERVAL_1MINUTE,
 #     return theSum
 stakanLast = 0
 
-for i in range(1000):
+for i in range(30):
 	buyTrade = 0
 	sellTrade = 0
 	trades = client.get_recent_trades(symbol=pair, limit=30)
