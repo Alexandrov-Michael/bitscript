@@ -64,8 +64,8 @@ for i in range(30):
 	sellTrade = 0
 	trades = client.get_recent_trades(symbol=pair, limit=30)
 	depth = client.get_order_book(symbol=pair, limit=10)
-	bidNow = depth["bids"][0][0]
-	askNow = depth["asks"][0][0]
+	bidNow = float(depth["bids"][0][0])
+	askNow = float(depth["asks"][0][0])
 	lastTrade = trades[-1]
 	lastPrice = str(lastTrade["price"])
 	lastQ = str(lastTrade["qty"])
