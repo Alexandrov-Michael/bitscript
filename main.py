@@ -78,7 +78,7 @@ for i in range(30):
 	stakanChange = stakan - stakanLast
 	bidChange = bidNow - bidLast
 	askChange = askNow - askLast
-	print "Стакан: %s   Изменение стакана: %s   B: %s  A: %s" % (str(stakan), str(stakanChange), str(bidChange), str(askChange))
+	print "Стакан: %s   Изменение стакана: %s   B: %.8f  A: %.8f" % (str(stakan), str(stakanChange), bidChange, askChange)
 	stakanLast = stakan
 	bidLast = bidNow
 	askLast = askNow
