@@ -63,7 +63,7 @@ askLast = 0
 bidChangeList = []
 askChangeList = []
 
-for i in range(150):
+for i in range(150000):
 	buyTrade = 0
 	sellTrade = 0
 	trades = client.get_recent_trades(symbol=pair, limit=30)
