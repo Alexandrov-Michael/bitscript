@@ -56,6 +56,8 @@ candles = client.get_klines(symbol=pair, interval=Client.KLINE_INTERVAL_1MINUTE,
 #         theSum = theSum + i
 #     return theSum
 stakanLast = 0
+bidLast = 0
+askLast = 0
 
 for i in range(30):
 	buyTrade = 0
@@ -74,8 +76,12 @@ for i in range(30):
 			buyTrade += float(x["qty"])
 	stakan = buyTrade - sellTrade
 	stakanChange = stakan - stakanLast
-	print "Стакан: %s   Изменение стакана: %s   B: %s  A: %s" % (str(stakan), str(stakanChange), str(bidNow), str(askNow))
+	bidChange = bidNow - bidLast
+	askChange = askNow - askLast
+	print "Стакан: %s   Изменение стакана: %s   B: %s  A: %s" % (str(stakan), str(stakanChange), str(bidChange), str(askChange))
 	stakanLast = stakan
+	bidLast = bidNow
+	askLast = askNow
 
 
 
