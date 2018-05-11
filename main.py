@@ -74,7 +74,7 @@ for i in range(1000):
 			buyTrade += float(x["qty"])
 	stakan = buyTrade - sellTrade
 	stakanChange = stakan - stakanLast
-	print "Стакан: %s   Изменение стакана: %s   BidLast: %s   AskLast: %s" % (str(stakan), str(stakanChange), str(bidNow), str(askNow))
+	print "Стакан: %s   Изменение стакана: %s   B: %s  A: %s" % (str(stakan), str(stakanChange), str(bidNow), str(askNow))
 	stakanLast = stakan
 
 
