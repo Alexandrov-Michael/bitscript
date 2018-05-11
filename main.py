@@ -70,7 +70,7 @@ for i in range(1000):
 		else:
 			buyTrade += float(x["qty"])
 	stakan = buyTrade - sellTrade
-	stakanChange = stakanLast - stakan
+	stakanChange = stakan - stakanLast
 	print "Стакан: %s   Изменение стакана: %s" % (str(stakan), str(stakanChange))
 	stakanLast = stakan
 
