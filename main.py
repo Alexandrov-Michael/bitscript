@@ -50,14 +50,18 @@ candles = client.get_klines(symbol=pair, interval=Client.KLINE_INTERVAL_1MINUTE,
 
 # changeLine = []
 
-# def listsum(numList):
-#     theSum = 0
-#     for i in numList:
-#         theSum = theSum + i
-#     return theSum
+def listsum(numList):
+    theSum = 0
+    for i in numList:
+        theSum = theSum + i
+    return theSum
+
+
 stakanLast = 0
 bidLast = 0
 askLast = 0
+bidChangeList = []
+askChangeList = []
 
 for i in range(50):
 	buyTrade = 0
@@ -78,10 +82,16 @@ for i in range(50):
 	stakanChange = stakan - stakanLast
 	bidChange = bidNow - bidLast
 	askChange = askNow - askLast
+	if len(bidChangeList) == 10:
+		print "BC: %.8f    AC: %.8f" % (listsum(bidChangeList), listsum(askChangeList))
+		bidChangeList = []
+		askChangeList = []
 	print "Стакан: %s   Изменение стакана: %s   B: %.8f  A: %.8f" % (str(stakan), str(stakanChange), bidChange, askChange)
 	stakanLast = stakan
 	bidLast = bidNow
 	askLast = askNow
+	bidChangeList.append(bidChange)
+	askChangeList.append(askChange)
 
 
 
