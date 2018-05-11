@@ -61,6 +61,9 @@ for i in range(1000):
 	buyTrade = 0
 	sellTrade = 0
 	trades = client.get_recent_trades(symbol=pair, limit=30)
+	depth = client.get_order_book(symbol=pair, limit=10)
+	bidNow = depth["bids"][0][0]
+	askNow = depth["asks"][0][0]
 	lastTrade = trades[-1]
 	lastPrice = str(lastTrade["price"])
 	lastQ = str(lastTrade["qty"])
@@ -71,7 +74,8 @@ for i in range(1000):
 			buyTrade += float(x["qty"])
 	stakan = buyTrade - sellTrade
 	stakanChange = stakan - stakanLast
-	print "Стакан: %s   Изменение стакана: %s" % (str(stakan), str(stakanChange))
+
+	print "Стакан: %s   Изменение стакана: %s   BidLast: %s   AskLast: %s" % (str(stakan), str(stakanChange), str(bidNow), str(askNow)
 	stakanLast = stakan
 
 
